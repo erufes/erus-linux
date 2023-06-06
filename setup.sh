@@ -11,7 +11,7 @@ echo   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/doc
 
 # Apt stuff
 apt update && apt upgrade -y
-apt install zsh vim ros-humble-desktop python-is-python3 caffeine -y
+apt install zsh vim ros-humble-desktop python-is-python3 caffeine docker-compose -y
 
 
 # Flatpak stuff
