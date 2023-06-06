@@ -19,5 +19,11 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 flatpak install -y discord freecad blender arduino com.prusa3d.PrusaSlicer com.ultimaker.cura kicad io.github.shiftey.Desktop com.jgraph.drawio.desktop
 
+# OMZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# TODO: Repetier-host
+# TODO: laserweb
+
 # Copy stuff
 cp fakeroot/etc/skel/* /etc/skel/ -rv
