@@ -46,11 +46,25 @@ flatpak update -y
 # OMZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# TODO: Repetier-host
-# TODO: laserweb
-# TODO: conda
-# TODO: UGS
+mkdir -p /etc/skel/pdr
 
+# Repetier-host
+wget https://download3.repetier.com/files/host/linux/Repetier-Host-x86_64-2.3.1.AppImage
+mv Repetier-Host-x86_64-2.3.1.AppImage /etc/skel/pdr/repetier-host
+
+# Laserweb
+wget https://github.com/LaserWeb/LaserWeb4-Binaries/releases/download/v4.0.994-130/laserweb-builder-v4.0.994-130-x86_64.AppImage
+mv laserweb-builder-v4.0.994-130-x86_64.AppImage /etc/skel/pdr/laserweb
+
+# Conda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh
+bash Miniconda3-latest-Linux-aarch64.sh -b -p /etc/skel/.conda
+
+# UGS
+wget https://github.com/winder/Universal-G-Code-Sender/releases/download/v2.0.14/linux-ugs-platform-app-2.0.14.tar.gz
+tar -xvf linux-ugs-platform-app-2.0.14.tar.gz -C /opt
+
+# VSCode
 wget https://az764295.vo.msecnd.net/stable/b3e4e68a0bc097f0ae7907b217c1119af9e03435/code_1.78.2-1683731010_amd64.deb
 dpkg -i code_1.78.2-1683731010_amd64.deb
 
